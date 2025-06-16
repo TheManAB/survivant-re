@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jeu Resident Evil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Resident Evil - Jeu de soirée</h1>
+  
+  <div id="players"></div>
+
+  <div class="buttons">
+    <button onclick="evenement()">🎲 Tirer un événement</button>
+    <button onclick="objet()">🎒 Utiliser un objet</button>
+    <button onclick="enigme()">🧠 Répondre à une énigme</button>
+    <button onclick="lanceDeDes()">🎲 Lancer le dé</button>
+    <button onclick="nextPlayer()">➡️ Joueur suivant</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
