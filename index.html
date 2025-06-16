@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Survivant de Raccoon City</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #eee;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      border: 2px solid #888;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      background-color: #222;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 Survivant de Raccoon City</h1>
+  <p>Clique sur un bouton pour tirer une carte</p>
+
+  <div>
+    <button onclick="drawCard('event')">Carte Événement</button>
+    <button onclick="drawCard('item')">Carte Objet</button>
+    <button onclick="drawCard('puzzle')">Carte Énigme</button>
+    <button onclick="drawCard('character')">Carte Personnage</button>
+  </div>
+
+  <div id="card" class="card"></div>
+
+  <script>
+    const cards = {
+      event: [
+        "Un Licker surgit ! Lance un dé. 1-3 : -1 PV.",
+        "Porte verrouillée ! Avez-vous une Clé ?",
+        "Zombies encerclants ! Coopérez ou perdez 1 PV.",
+        "Boss Tyrant ! Utilisez arme lourde ou -2 PV.",
+        "Gaz toxique ! Perdez un tour sauf si Herbe bleue."
+      ],
+      item: [
+        "Spray de Premiers Secours : +2 PV",
+        "Clé : Ouvre une porte verrouillée",
+        "Grenade : Détruit ennemis d'un événement",
+        "Herbe verte : +1 PV",
+        "Antidote : Soigne l'infection"
+      ],
+      puzzle: [
+        "Citez 3 membres des S.T.A.R.S.",
+        "Quel est le virus de RE4 ? (Réponse : Las Plagas)",
+        "Décodage : R_A__C__N = ?",
+        "Combien de campagnes dans RE6 ? (Réponse : 4)",
+        "Quel est le nom complet de Wesker ?"
+      ],
+      character: [
+        "Jill Valentine : Ignore un piège 1 fois.",
+        "Leon S. Kennedy : Relance un dé par round.",
+        "Claire Redfield : Pioche 2 objets une fois.",
+        "Chris Redfield : +1 dégât.",
+        "Ada Wong : Voit une carte événement avant de la piocher."
+      ]
+    };
+
+    function drawCard(type) {
+      const random = Math.floor(Math.random() * cards[type].length);
+      document.getElementById("card").innerText = cards[type][random];
+    }
+  </script>
+</body>
+</html>
